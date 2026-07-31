@@ -32,4 +32,3 @@ def process_list(numbers):
 def analyze_string(s):
     s = str(s)
     return (f'Длинна: {len(s)} \nВерхний регистр: {s.upper()} \nНаоборот: {s[::-1]}')
-

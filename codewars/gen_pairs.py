@@ -1,6 +1,3 @@
-
-
-
 def generate_pairs(n):
     generate_list = []
     for i in range(n + 1):
