@@ -1,25 +1,24 @@
 class Car:
-    def __init__(self, color, price):
+    def __init__(self, color: str, price: float):
         self.color = color
         self.price = price
 
-    def get_final_price(self):
-        if self.color == 'красный':
-            return int(self.price * 1.15)
-        else:
-            return int(self.price)
+    def get_final_price(self) -> float:
+        if self.color.lower() == 'красный':
+            return self.price * 1.15
+        return self.price
 
 
 class NewCar(Car):
-    def __init__(self, color, price, has_trailer):
+    def __init__(self, color, price, has_trailer:bool):
         super().__init__(color, price)
         self.has_trailer = has_trailer
 
-    def get_final_price(self):
-        base = super().get_final_price()
+    def get_final_price(self) -> float:
+        final_price = super().get_final_price()
         if self.has_trailer:
-            return int(base + self.price * 0.35)
-        return int(base)
+            return final_price + self.price * 0.35
+        return final_price
 
 
 car1 = Car('красный', 100)
